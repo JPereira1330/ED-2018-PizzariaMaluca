@@ -2,12 +2,12 @@ package Model;
 
 public class Lista_Ingredientes {
 
-	private Ingrediente inicio, fim;
+	private Ingredientes inicio, fim;
 
 	// Metodo para adicionar novo objeto
 	public void add(String sabor) {
 		
-		Ingrediente objeto = new Ingrediente(sabor);
+		Ingredientes objeto = new Ingredientes(sabor);
 		
 		// Caso inicio já usado e proximo nulo
 		if(listaVazia()) {
@@ -22,7 +22,7 @@ public class Lista_Ingredientes {
 	
 	// Mostrar lista
 	public void listar() {
-		Ingrediente atual = inicio;
+		Ingredientes atual = inicio;
 		String retorno = "";
 		
 		for (int cont = 0; cont <= 4; cont++) {
@@ -46,7 +46,7 @@ public class Lista_Ingredientes {
 	// Metodo que retortna tamanho da string
 	public int tamanho(){
 		int tamanho = 0;
-		Ingrediente atual = inicio;
+		Ingredientes atual = inicio;
 		while(atual != null){
 			tamanho++;
 			atual = atual.getProximo();
@@ -59,7 +59,7 @@ public class Lista_Ingredientes {
 		return inicio;
 	}
 
-	public void setInicio(Ingrediente inicio) {
+	public void setInicio(Ingredientes inicio) {
 		this.inicio = inicio;
 	}
 
@@ -67,7 +67,7 @@ public class Lista_Ingredientes {
 		return fim;
 	}
 
-	public void setFim(Ingrediente fim) {
+	public void setFim(Ingredientes fim) {
 		this.fim = fim;
 	}
 }
