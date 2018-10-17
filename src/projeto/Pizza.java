@@ -3,10 +3,7 @@ package projeto;
 public class Pizza {
 
 	private String sabor;
-<<<<<<< HEAD
-	
-	
-=======
+
 	private Lista_Ingredientes listaIngredienteNecessario;
 	
 	public Pizza() {	
@@ -80,5 +77,5 @@ public class Pizza {
 	
 		listaIngredienteNecessario.listar();
 	}	
->>>>>>> 376c011fd43597a0d3e62e91cb73332842fc3c1f
+
 }
