@@ -2,8 +2,23 @@ package projeto;
 
 public class Carta {
 
-	String acao;
-	Carta proxima;
+	private String acao;
+	private Carta anterior;
+	
+	// Construtor vazio
+	public Carta() {}
+	
+	/**
+	 * CONSTRUTOR
+	 * @param acao
+	 * @param anterior
+	 */
+	public Carta(String acao, Carta anterior) {
+		
+		setAcao(acao);
+		setAnterior(anterior);
+		
+	}
 	
 	public final String getAcao() {
 		return acao;
@@ -11,11 +26,11 @@ public class Carta {
 	public final void setAcao(String acao) {
 		this.acao = acao;
 	}
-	public final Carta getProxima() {
-		return proxima;
+	public final Carta getAnterior() {
+		return anterior;
 	}
-	public final void setProxima(Carta proxima) {
-		this.proxima = proxima;
+	public final void setAnterior(Carta anterior) {
+		this.anterior = anterior;
 	}
 	
 }
