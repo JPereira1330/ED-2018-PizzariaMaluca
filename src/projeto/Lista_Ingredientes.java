@@ -9,7 +9,7 @@ public class Lista_Ingredientes {
 		
 		Ingredientes objeto = new Ingredientes(sabor);
 		
-		// Caso inicio j√° usado e proximo nulo
+		// Caso inicio j· usado e proximo nulo
 		if(listaVazia()) {
 			inicio = objeto;
 			fim = objeto;
