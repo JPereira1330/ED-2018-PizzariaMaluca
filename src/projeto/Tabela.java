@@ -1,4 +1,4 @@
-package Model;
+package projeto;
 
 public class Tabela extends Object{
 	
