@@ -8,23 +8,32 @@ public class Ingredientes {
 		
 	}
 	
+	/**
+	 * CONSTRUTOR
+	 * @param Sabor 	[String] Ingrediente
+	 * @param Proximo 	[Ingredientes] Proximo ingrediente
+	 */
 	public Ingredientes(String sabor) {
 		this.sabor = sabor;
 		this.proximo = null;
 	}
 
+	/*
+	 * GETTER'S
+	 */
 	public String getSabor() {
 		return sabor;
 	}
-
-	public void setSabor(String sabor) {
-		this.sabor = sabor;
-	}
-
 	public Ingredientes getProximo() {
 		return proximo;
 	}
 
+	/*
+	 * SETTER'S
+	 */
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
+	}
 	public void setProximo(Ingredientes proximo) {
 		this.proximo = proximo;
 	}
