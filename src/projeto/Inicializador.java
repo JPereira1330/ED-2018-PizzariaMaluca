@@ -86,71 +86,72 @@ public class Inicializador {
 	}
 
 	// Metodo para adicionar as pizzas
-	/*public void montarPizza(String sabor) {
+	public static Pizza montarPizza(String sabor) {
 		
-		listaIngredienteNecessario = new Lista_Ingredientes();
+		Pizza pizza = new Pizza();
 		
 		switch(sabor) {
 		
 			// 1. Calabresa		[ Azeitona, Calabresa, Ervilha,   Brocolis,  Ovo 		] 
 			case "Calabresa":
-				listaIngredienteNecessario.add("Azeitona");
-				listaIngredienteNecessario.add("Calabresa");
-				listaIngredienteNecessario.add("Ervilha");
-				listaIngredienteNecessario.add("Brocolis");
-				listaIngredienteNecessario.add("Ovo");
+				pizza.add("Azeitona");
+				pizza.add("Calabresa");
+				pizza.add("Azeitona");
+				pizza.add("Calabresa");
+				pizza.add("Ervilha");
+				pizza.add("Brocolis");
+				pizza.add("Ovo");
 				break;
 				
 			// 2. Marguerita	[ Queijo,   Milho,     Tomate,    Calabresa, Brocolis 	]
 			case "Marguerita":
-				listaIngredienteNecessario.add("Quejo");
-				listaIngredienteNecessario.add("Milho");
-				listaIngredienteNecessario.add("Tomate");
-				listaIngredienteNecessario.add("Calabresa");
-				listaIngredienteNecessario.add("Brocolis");
+				pizza.add("Quejo");
+				pizza.add("Milho");
+				pizza.add("Tomate");
+				pizza.add("Calabresa");
+				pizza.add("Brocolis");
 				break;
 				
 			// 3. Romana		[ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] 
 			case "Romana":
-				listaIngredienteNecessario.add("Queijo");
-				listaIngredienteNecessario.add("Milho");
-				listaIngredienteNecessario.add("Cebola");
-				listaIngredienteNecessario.add("Presunto");
-				listaIngredienteNecessario.add("Ervilha");
+				pizza.add("Queijo");
+				pizza.add("Milho");
+				pizza.add("Cebola");
+				pizza.add("Presunto");
+				pizza.add("Ervilha");
 				break;
 				
 			// 4. Toscana		[ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]
 			case "Toscana":
-				listaIngredienteNecessario.add("Presunto");
-				listaIngredienteNecessario.add("Tomate");
-				listaIngredienteNecessario.add("Calabresa");
-				listaIngredienteNecessario.add("Cebola");
-				listaIngredienteNecessario.add("Azeitona");
+				pizza.add("Presunto");
+				pizza.add("Tomate");
+				pizza.add("Calabresa");
+				pizza.add("Cebola");
+				pizza.add("Azeitona");
 				break;
 			
 			// 5. Portuguesa	[ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]
 			case "Portuguesa":
-				listaIngredienteNecessario.add("Queijo");
-				listaIngredienteNecessario.add("Milho");
-				listaIngredienteNecessario.add("Ovo");
-				listaIngredienteNecessario.add("Azeitona");
-				listaIngredienteNecessario.add("Presunto");
+				pizza.add("Queijo");
+				pizza.add("Milho");
+				pizza.add("Ovo");
+				pizza.add("Azeitona");
+				pizza.add("Presunto");
 				break;
 				
 			// 6. Vegetariana	[ Ovo, 	    Tomate,    Cebola,    Brocolis,  Ervilha	]
 			case "Vegetariana":
-				listaIngredienteNecessario.add("Ovo");
-				listaIngredienteNecessario.add("Tomate");
-				listaIngredienteNecessario.add("Cebola");
-				listaIngredienteNecessario.add("Brocolis");
-				listaIngredienteNecessario.add("Ervilha");
+				pizza.add("Ovo");
+				pizza.add("Tomate");
+				pizza.add("Cebola");
+				pizza.add("Brocolis");
+				pizza.add("Ervilha");
 				break;
 				default:
-					System.out.println("Deu ruim");
+					System.out.println("Sabor de pizza incorreto");
 					break;
-				
 		}
-	
-		listaIngredienteNecessario.listar();
-	}*/
+		
+		return pizza;
+	}
 }
