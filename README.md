@@ -3,6 +3,8 @@
 Materia: Estrutura de Dados </br>
 Equipe: [@RafaJow](https://github.com/RafaJow) ; [@JPereira1330](https://github.com/JPereira1330).
 
+<hr>
+
 <br>
 
 __Funcionamento Geral__
