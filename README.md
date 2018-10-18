@@ -18,12 +18,13 @@ __Elementos do jogo__
 - **Elemento tipo sorte ou azar:** caso o jogador pare o seu peão na parte indicando sorte ou azar, o mesmo vira uma ficha a qual contém um prêmio ou uma punição.
 - **Funcionamento do jogo:** todos os jogadores iniciam em uma posição do tabuleiro com um peão. A cada rodada, os jogadores jogam o dado e seguem adiante n casas no tabuleiro, de acordo com o número indicado pelo dado e recebe o ingrediente, a punição ou o prêmio (retirando a ficha sorte ou azar).
 
+<br>
 
-__TABELA / TABULEIRO__
-A tabela � uma lista circular duplamente encadeada para que o jogador consiga se movimentar por ela sem a possibilidade de encontrar o final da lista, dando assim uma imers�o de um jogo infinito. Cada jogador possuir� um tabuleiro como seu atributo, o atributo servir� para o usu�rio localizar sua posi��o no tabuleiro. A pizza � uma lista de ingredientes que � definido pelo sabor de pizza escolhido pelo usu�rio. o jogo possui eventos espalhados pelo tabuleiros, entre eles existe o sorte ou azar que s�o 20 eventos diferentes.
+__Como implementar o jogo utilizando-se de TADs:__
 
-Tabuleiro (Lista circular duplamente encadeada)
-String Evento
-Tabuleiro anterior
-Tabuleiro pr�ximo
+Obs.: Todos os elementos devem utilizar-se de alocação dinâmica de memória.
+<br>
+
+O dado deve ser um número entre 1 e 6 sorteado aleatoriamente, utilizando-se de função randômica. 
+Tabuleiro: implementar uma lista circular duplamente encadeada contendo sequencialmente todas as posições do tabuleiro. Todos os jogadores iniciam no início da lista. Obs.: a lista deve ter um ponteiro para cada jogador (para marcar a posição atual do jogador). Abaixo seguem todas as posições do tabuleiro, iniciando do primeiro elemento da primeira fila, seguindo-se no sentido horizontal até o último elemento da fila (1-perde tudo, 2- cebola..., 35- sorte ou azar)
 
