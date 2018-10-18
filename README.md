@@ -28,3 +28,13 @@ Obs.: Todos os elementos devem utilizar-se de alocação dinâmica de memória.
 O dado deve ser um número entre 1 e 6 sorteado aleatoriamente, utilizando-se de função randômica. 
 Tabuleiro: implementar uma lista circular duplamente encadeada contendo sequencialmente todas as posições do tabuleiro. Todos os jogadores iniciam no início da lista. Obs.: a lista deve ter um ponteiro para cada jogador (para marcar a posição atual do jogador). Abaixo seguem todas as posições do tabuleiro, iniciando do primeiro elemento da primeira fila, seguindo-se no sentido horizontal até o último elemento da fila (1-perde tudo, 2- cebola..., 35- sorte ou azar)
 
+<br>
+_INICIO_
+
+COLUNA 01  | COLUNA 02 | COLUNA 03 | COLUNA 04 | COLUNA 05 | COLUNA 06 | COLUNA 07 |
+:--------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
+Perde Tudo | Cebola    | Sorte Azar| Calabresa | Queijo    | Sorte Azar| Sorte Azar|
+Tomate     | Ovos      | Azeitona  | Sorte Azar| Sorte Azar| Milho     | Azeitona  |
+Sorte Azar | Prezunto  | Tomate    | Milho     | Sorte Azar| Sorte Azar| Brocolis  |
+Sorte Azar | Ovos      | Cebola    | Sorte Azar| Calabreza | Sorte Azar| Prezunto  |
+Sorte Azar | Queijo    | Azeitona  | Sorte Azar| Brocolos  | Azeitona  | Sorte Azar|
