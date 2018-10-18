@@ -39,3 +39,11 @@ Sorte Azar | Ovos      | Cebola    | Sorte Azar| Calabreza | Sorte Azar| Prezunt
 Sorte Azar | Queijo    | Azeitona  | Sorte Azar| Brocolos  | Azeitona  | Sorte Azar|
 
 **Fim** :point_right:
+
+Obs.: o elemento pizzaiolo foi substituído pelo elemento sorte ou azar. 
+<br>
+
+ - **Escolha da pizza a ser montada:**
+As pizzas devem ser implementadas numa lista simplesmente encadeada, contendo 5 ingredientes. A cada ingrediente conquistado, o mesmo é retirado da lista. GANHA O JOGO o jogador que esvaziar primeiro a sua lista.
+ - **Fichas sorte ou azar (prêmio ou punição):**
+Implementar uma pilha contendo diversos prêmios ou punições para os participantes. Os prêmios e punições devem conter 20 fichas de cada ação empilhadas aleatoriamente, que são as seguintes: perder um ingrediente, ganhar dois ingredientes, retirar um ingrediente de um outro jogador, queimar a pizza(perder todos os ingredientes). Quando no tabuleiro o jogador for para a posição sorte ou azar, um elemento da pilha é retirado, revelado ao jogador e executada a ação descrita na ficha. Caso pilha se esvazie, empilhar novamente os elementos de forma aleatória.
