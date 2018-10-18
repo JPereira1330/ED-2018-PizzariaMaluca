@@ -2,80 +2,98 @@ package projeto;
 
 public class Pizza {
 
-	private String sabor;
+	private int quantia;
+	private Ingredientes inicio;
 
-	private Lista_Ingredientes listaIngredienteNecessario;
-	
 	public Pizza() {	
 
 	}
 	
-	public void montarPizza(String sabor) {
+	// Metodo para adicionar novo objeto
+	public void add(String sabor) {
 		
-		listaIngredienteNecessario = new Lista_Ingredientes();
+		Ingredientes objeto = new Ingredientes(sabor);
 		
-		switch(sabor) {
-		
-			// 1. Calabresa		[ Azeitona, Calabresa, Ervilha,   Brocolis,  Ovo 		] 
-			case "Calabresa":
-				listaIngredienteNecessario.add("Azeitona");
-				listaIngredienteNecessario.add("Calabresa");
-				listaIngredienteNecessario.add("Ervilha");
-				listaIngredienteNecessario.add("Brocolis");
-				listaIngredienteNecessario.add("Ovo");
-				break;
-				
-			// 2. Marguerita	[ Queijo,   Milho,     Tomate,    Calabresa, Brocolis 	]
-			case "Marguerita":
-				listaIngredienteNecessario.add("Quejo");
-				listaIngredienteNecessario.add("Milho");
-				listaIngredienteNecessario.add("Tomate");
-				listaIngredienteNecessario.add("Calabresa");
-				listaIngredienteNecessario.add("Brocolis");
-				break;
-				
-			// 3. Romana		[ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] 
-			case "Romana":
-				listaIngredienteNecessario.add("Queijo");
-				listaIngredienteNecessario.add("Milho");
-				listaIngredienteNecessario.add("Cebola");
-				listaIngredienteNecessario.add("Presunto");
-				listaIngredienteNecessario.add("Ervilha");
-				break;
-				
-			// 4. Toscana		[ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]
-			case "Toscana":
-				listaIngredienteNecessario.add("Presunto");
-				listaIngredienteNecessario.add("Tomate");
-				listaIngredienteNecessario.add("Calabresa");
-				listaIngredienteNecessario.add("Cebola");
-				listaIngredienteNecessario.add("Azeitona");
-				break;
-			
-			// 5. Portuguesa	[ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]
-			case "Portuguesa":
-				listaIngredienteNecessario.add("Queijo");
-				listaIngredienteNecessario.add("Milho");
-				listaIngredienteNecessario.add("Ovo");
-				listaIngredienteNecessario.add("Azeitona");
-				listaIngredienteNecessario.add("Presunto");
-				break;
-				
-			// 6. Vegetariana	[ Ovo, 	    Tomate,    Cebola,    Brocolis,  Ervilha	]
-			case "Vegetariana":
-				listaIngredienteNecessario.add("Ovo");
-				listaIngredienteNecessario.add("Tomate");
-				listaIngredienteNecessario.add("Cebola");
-				listaIngredienteNecessario.add("Brocolis");
-				listaIngredienteNecessario.add("Ervilha");
-				break;
-				default:
-					System.out.println("Deu ruim");
-					break;
-				
+		// Caso inicio j� usado e proximo nulo
+		if(listaVazia()) {
+			inicio = objeto;
+		}else {
+			objeto.setProximo(inicio);
+			inicio = objeto;
 		}
+		
+	}
 	
-		listaIngredienteNecessario.listar();
-	}	
+	/*
+	 * ARRUMAR METODO DE REMOVER
+	 */
+	// Metodo para remove
+	public void rem(String sabor) {
+		
+		Ingredientes atual = inicio;
+		Ingredientes ant = atual;
+		
+		while(atual != null) {
+			if (atual.getSabor().equalsIgnoreCase(sabor)) {
+				ant.setProximo(atual.getProximo());
+			}
+			ant = atual;
+			atual = atual.getProximo();
+		}
+	}
+	
+	// Mostrar lista
+	public void listar() {
+		Ingredientes atual = inicio;
+		String retorno = "";
+		
+		for (int cont = 0; cont <= 4; cont++) {
+			retorno += atual.getSabor()+" ";
+			atual = atual.getProximo();
+		}
+		
+		System.out.println(retorno);
+	}
+	
+	// Metodo para limpar a lista
+	public void limparLista(){
+		inicio = null;
+	}
+	
+	// Metodo para retornar se lista esta vazia
+	public boolean listaVazia() {
+		return inicio == null;
+	}
+	
+	// Metodo que retortna tamanho da lista
+	public int tamanho(){
+		int tamanho = 0;
+		Ingredientes atual = inicio;
+		while(atual != null){
+			tamanho++;
+			atual = atual.getProximo();
+		}
+		return tamanho;
+	}
 
+	/*
+	 * GETTER'S
+	 */
+	public final int getQuantia() {
+		return quantia;
+	}
+	public final Ingredientes getInicio() {
+		return inicio;
+	}
+
+	/*
+	 * SETTER'S
+	 */
+	public final void setQuantia(int quantia) {
+		this.quantia = quantia;
+	}
+	public final void setInicio(Ingredientes inicio) {
+		this.inicio = inicio;
+	}
+	
 }
