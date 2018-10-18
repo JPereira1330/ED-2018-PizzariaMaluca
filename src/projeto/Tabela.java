@@ -1,6 +1,6 @@
 package projeto;
 
-public class Tabela extends Object{
+public class Tabela{
 	
 	// Declaração dos atributos
 	private String casa;
