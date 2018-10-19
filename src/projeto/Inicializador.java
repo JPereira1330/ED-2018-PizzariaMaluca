@@ -2,8 +2,6 @@ package projeto;
 
 /**
  * 
- * @author José C. Pereira
- * 
  * Classe responsavel por adicionar valores padrões do jogo
  *
  */
@@ -155,7 +153,15 @@ public class Inicializador {
 		return pizza;
 	}
 
-	// Metodo para adicionar as casas
+	// Metodo para adicionar as casas do tabuleiro
+	public static Tabuleiro montarTabuleiro() {
+		Tabuleiro tabuleiro = new Tabuleiro();
+		
+		//tabuleiro.insereUltimo("Perde Tudo");
+		
+		
+		return tabuleiro;
+	}
 	
 
 }

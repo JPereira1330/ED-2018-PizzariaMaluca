@@ -1,10 +1,14 @@
 package projeto;
 
+/**
+ * 
+ * Lista circular duplamente encadeada
+ *
+ */
+
 public class Tabuleiro {
-//Lista dupla circular
 	
 	private Tabela atual, ultimo, primeiro;
-	
 	
 	public Tabuleiro() {
 		Tabela atual = null;
@@ -12,10 +16,12 @@ public class Tabuleiro {
 		Tabela primeiro = null;
 	}
 	
+	// Retorna se a lista esta vazia
 	public boolean estaVazia() {
 		return primeiro == null;
 	}
 	
+	// Retorna comprimento da lista
 	public int comprimento() {
 		int comp =0;
 		atual = primeiro;
@@ -26,7 +32,7 @@ public class Tabuleiro {
 		return comp;
 	}
 	
-	//Checar se precisa de parametro pra criar Tabela, caso precise alterar metodo inserePrimeiro() abaixo
+	// Checar se precisa de parametro pra criar Tabela, caso precise alterar metodo inserePrimeiro() abaixo
 	public void inserePrimeiro() {
 		Tabela novo = new Tabela();
 		
@@ -65,7 +71,7 @@ public class Tabuleiro {
 	}
 	
 	
-	//MOVE PARA A POSIÇÃO INDICADA
+	//MOVE PARA A POSIï¿½ï¿½O INDICADA
 	public void moveParaPosicao(int pos) {
 		atual = primeiro;
 		for (int i = 0; i < pos; i++) {
@@ -74,7 +80,7 @@ public class Tabuleiro {
 	}
 	
 	/* INSERE UM NOVO OBJETO NA POSICAO INDICADA,
-	 * mesma coisa dos metodos inserePrimeiro() e insereUltimo(), verificar se é necessario
+	 * mesma coisa dos metodos inserePrimeiro() e insereUltimo(), verificar se ï¿½ necessario
 	 * passar algum parametro para criar Tabela...
 	 * */
 	public void insereNaPosicao(int pos) {
@@ -85,13 +91,13 @@ public class Tabuleiro {
 		atual.setProximo(novo);
 	}
 	
-	//Retorna o elemento na posição indicada
+	//Retorna o elemento na posiï¿½ï¿½o indicada
 	public Tabela elementoNaPosicao(int pos) {
 		moveParaPosicao(pos);
 		return atual;
 	}
 	
-	//Retorna a posicao de um elemento na lista, se não existir retorna um numero negativo(palavras do luciano)
+	//Retorna a posicao de um elemento na lista, se nï¿½o existir retorna um numero negativo(palavras do luciano)
 	public int buscaElemento(String n) {
 		//No caso "String n" seria algo para comparar, o nome no caso, mas dai tem q ver isso
 		

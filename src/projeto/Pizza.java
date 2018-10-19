@@ -24,9 +24,6 @@ public class Pizza {
 		
 	}
 	
-	/*
-	 * ARRUMAR METODO DE REMOVER
-	 */
 	// Metodo para remove
 	public void rem(String sabor) {
 		
