@@ -25,19 +25,33 @@ public class Pizza {
 	}
 	
 	// Metodo para remove
-	public void rem(String sabor) {
+public void rem(String sabor) {
 		
 		Ingredientes atual = inicio;
 		Ingredientes ant = atual;
+		int cont=0;
 		
 		while(atual != null) {
 			if (atual.getSabor().equalsIgnoreCase(sabor)) {
 				ant.setProximo(atual.getProximo());
+				cont =1;
+			}else {
+				ant = atual;
+				atual = atual.getProximo();
 			}
-			ant = atual;
-			atual = atual.getProximo();
+		}
+		if(cont == 1) {
+			atual = inicio;
+			while(atual != null) {
+				if(atual.getProximo().getSabor().equalsIgnoreCase(ant.getSabor())) {
+					atual.setProximo(ant.getProximo());
+				}else {
+					atual = atual.getProximo();
+				}
+			}
 		}
 	}
+	
 	
 	// Mostrar lista
 	public void listar() {
