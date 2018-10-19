@@ -1,6 +1,7 @@
 # Pizzaria Maluca
 
 Materia: Estrutura de Dados </br>
+Semestre: 4º <br>
 Equipe: [@RafaJow](https://github.com/RafaJow) ; [@JPereira1330](https://github.com/JPereira1330).
 
 <br>
