@@ -10,6 +10,14 @@ public class Teste {
 		
 		Menu.exec();
 		
+		
+		System.out.println("6 - Removendo ERVILHA");
+		pizza.rem("Ervilha");
+		System.out.println("\n");
+		
+		System.out.println("7 - Listando altercoes");
+		pizza.listar();
+		
 	}
 	
 }

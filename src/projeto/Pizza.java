@@ -34,17 +34,23 @@ public class Pizza {
 		atual = inicio;
 		System.out.println("SOUTANDO ATUAL  "+atual.getSabor());
 		// Procura por sabor na lista
-		while(atual != null) {
+		
+		for(int i=0; i< comprimento(); i++){
+			try {
+				// Caso sabor for DIFERENTE o passado pelo parametro
+				if(!atual.getSabor().equalsIgnoreCase(sabor)) {
+					novo = new Ingredientes(atual.getSabor());
+					novo.setProximo(list); // Aqui coloco o objeto que possui  alista anterior
+					list = novo;
+				}
 			
-			// Caso sabor for DIFERENTE o passado pelo parametro
-			if(!atual.getSabor().equalsIgnoreCase(sabor)) {
-				novo = new Ingredientes(atual.getSabor());
-				novo.setProximo(list); // Aqui coloco o objeto que possui  alista anterior
-				list = novo;
+				// Pega o proximo Objeto
+				atual = atual.getProximo();
+			}catch(NullPointerException e) {
+				System.out.println("Carai "+atual.getSabor()+"\n"+"Sabor: "+sabor);
+			}catch(Exception e) {
+				e.printStackTrace();
 			}
-			
-			// Pega o proximo Objeto
-			atual = atual.getProximo();
 		}
 		
 		inicio = list;
@@ -52,6 +58,15 @@ public class Pizza {
 	
 	}
 	
+	public int comprimento() {
+		int comp =0;
+		Ingredientes atual = inicio;
+		while(atual != null) {
+			comp++;
+			atual = atual.getProximo();
+		}
+		return comp;
+	}
 	
 	// Mostrar lista
 	public void listar() {
