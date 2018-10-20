@@ -28,12 +28,12 @@ public class Pizza {
 	public void rem(String sabor) {
 		
 		Ingredientes atual = inicio;
-		Ingredientes list = atual;
-		Ingredientes novo = inicio;
+		Ingredientes list = new Ingredientes();
+		Ingredientes novo = new Ingredientes();
 		
 		// Procura por sabor na lista
 		while(atual != null) {
-		
+			
 			// Caso sabor for igual o passado pelo parametro
 			if(!atual.getSabor().equalsIgnoreCase(sabor)) {
 				novo = new Ingredientes(atual.getSabor());
@@ -56,7 +56,7 @@ public class Pizza {
 		String retorno = "";
 		
 		while(atual != null) {
-			retorno += atual.getSabor()+" ";
+			retorno += (atual.getSabor() == null) ? "" : atual.getSabor()+" ";
 			atual = atual.getProximo();
 		}
 		
