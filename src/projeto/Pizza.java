@@ -14,7 +14,7 @@ public class Pizza {
 		
 		Ingredientes objeto = new Ingredientes(sabor);
 		
-		// Caso inicio j� usado e proximo nulo
+		// Caso inicio ja usado e proximo nulo
 		if(listaVazia()) {
 			inicio = objeto;
 		}else {
@@ -25,21 +25,45 @@ public class Pizza {
 	}
 	
 	// Metodo para remove
-public void rem(String sabor) {
+	public void rem(String sabor) {
 		
 		Ingredientes atual = inicio;
-		Ingredientes ant = atual;
+		Ingredientes list = atual;
+		Ingredientes novo = inicio;
+		
+		// Procura por sabor na lista
+		while(atual != null) {
+		
+			// Caso sabor for igual o passado pelo parametro
+			if(!atual.getSabor().equalsIgnoreCase(sabor)) {
+				novo = new Ingredientes(atual.getSabor());
+				novo.setProximo(list); // Aqui coloco o objeto que possui  alista anterior
+				list = novo;
+			}
+			
+			// Pega o proximo Objeto
+			atual = atual.getProximo();
+		}
+		
+		inicio = list;
+		
+		/*
+		Ingredientes atual = inicio;
+
 		int cont=0;
+		
+		
 		
 		while(atual != null) {
 			if (atual.getSabor().equalsIgnoreCase(sabor)) {
 				ant.setProximo(atual.getProximo());
-				cont =1;
+				cont = 1;
 			}else {
 				ant = atual;
 				atual = atual.getProximo();
 			}
 		}
+		
 		if(cont == 1) {
 			atual = inicio;
 			while(atual != null) {
@@ -50,6 +74,7 @@ public void rem(String sabor) {
 				}
 			}
 		}
+		*/
 	}
 	
 	
@@ -58,7 +83,7 @@ public void rem(String sabor) {
 		Ingredientes atual = inicio;
 		String retorno = "";
 		
-		for (int cont = 0; cont <= 4; cont++) {
+		while(atual != null) {
 			retorno += atual.getSabor()+" ";
 			atual = atual.getProximo();
 		}
