@@ -31,10 +31,12 @@ public class Pizza {
 		Ingredientes list = new Ingredientes();
 		Ingredientes novo = new Ingredientes();
 		
+		atual = inicio;
+		System.out.println("SOUTANDO ATUAL  "+atual.getSabor());
 		// Procura por sabor na lista
 		while(atual != null) {
 			
-			// Caso sabor for igual o passado pelo parametro
+			// Caso sabor for DIFERENTE o passado pelo parametro
 			if(!atual.getSabor().equalsIgnoreCase(sabor)) {
 				novo = new Ingredientes(atual.getSabor());
 				novo.setProximo(list); // Aqui coloco o objeto que possui  alista anterior
@@ -46,6 +48,7 @@ public class Pizza {
 		}
 		
 		inicio = list;
+		System.out.println("SOUTANDO LIST "+list.getSabor());
 	
 	}
 	
