@@ -94,8 +94,6 @@ public class Inicializador {
 			case "Calabresa":
 				pizza.add("Azeitona");
 				pizza.add("Calabresa");
-				pizza.add("Azeitona");
-				pizza.add("Calabresa");
 				pizza.add("Ervilha");
 				pizza.add("Brocolis");
 				pizza.add("Ovo");

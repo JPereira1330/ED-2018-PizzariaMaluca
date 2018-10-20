@@ -46,35 +46,7 @@ public class Pizza {
 		}
 		
 		inicio = list;
-		
-		/*
-		Ingredientes atual = inicio;
-
-		int cont=0;
-		
-		
-		
-		while(atual != null) {
-			if (atual.getSabor().equalsIgnoreCase(sabor)) {
-				ant.setProximo(atual.getProximo());
-				cont = 1;
-			}else {
-				ant = atual;
-				atual = atual.getProximo();
-			}
-		}
-		
-		if(cont == 1) {
-			atual = inicio;
-			while(atual != null) {
-				if(atual.getProximo().getSabor().equalsIgnoreCase(ant.getSabor())) {
-					atual.setProximo(ant.getProximo());
-				}else {
-					atual = atual.getProximo();
-				}
-			}
-		}
-		*/
+	
 	}
 	
 	
