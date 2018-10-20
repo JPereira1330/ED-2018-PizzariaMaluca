@@ -28,6 +28,14 @@ public class Teste {
 		System.out.println("5 - Listando altercoes");
 		pizza.listar();
 		
+		
+		System.out.println("6 - Removendo ERVILHA");
+		pizza.rem("Ervilha");
+		System.out.println("\n");
+		
+		System.out.println("7 - Listando altercoes");
+		pizza.listar();
+		
 	}
 	
 }
