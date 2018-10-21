@@ -1,18 +1,23 @@
 package projeto;
 
-public class Tabela{
+public class Casa{
 	
 	// Declaração dos atributos
 	private String casa;
-	private Tabela anterior;
-	private Tabela proximo;
+	private Casa anterior;
+	private Casa proximo;
 	
 	// Construtor do objeto vazio
-	public Tabela() {}
+	public Casa() {}
+	
+	// Construtor do objeto apenas com a acao da casa
+	public Casa(String acao) {
+		setCasa(acao);
+	}
 	
 	// Construtor do objeto com parametro
-	public Tabela(String casa, Tabela anterior, Tabela proximo) {
-		setCasa(casa);
+	public Casa(String acao, Casa anterior, Casa proximo) {
+		setCasa(acao);
 		setAnterior(anterior);
 		setProximo(proximo);
 	}
@@ -25,19 +30,19 @@ public class Tabela{
 		this.casa = casa;
 	}
 
-	public Tabela getAnterior() {
+	public Casa getAnterior() {
 		return anterior;
 	}
 
-	public void setAnterior(Tabela anterior) {
+	public void setAnterior(Casa anterior) {
 		this.anterior = anterior;
 	}
 
-	public Tabela getProximo() {
+	public Casa getProximo() {
 		return proximo;
 	}
 
-	public void setProximo(Tabela proximo) {
+	public void setProximo(Casa proximo) {
 		this.proximo = proximo;
 	}
 	

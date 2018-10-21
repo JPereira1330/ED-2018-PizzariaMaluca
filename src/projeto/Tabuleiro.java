@@ -8,12 +8,12 @@ package projeto;
 
 public class Tabuleiro {
 	
-	private Tabela atual, ultimo, primeiro;
+	private Casa atual, ultimo, primeiro;
 	
 	public Tabuleiro() {
-		Tabela atual = null;
-		Tabela ultimo = null;
-		Tabela primeiro = null;
+		Casa atual = null;
+		Casa ultimo = null;
+		Casa primeiro = null;
 	}
 	
 	// Retorna se a lista esta vazia
@@ -25,16 +25,30 @@ public class Tabuleiro {
 	public int comprimento() {
 		int comp =0;
 		atual = primeiro;
-		while(atual != null) {
+		do {
 			comp++;
 			atual = atual.getProximo();
-		}
+		}while(atual != ultimo.getProximo());
+		
 		return comp;
 	}
 	
+	// Metodo que lista
+	public String lista() {
+		String retorno = "";
+		
+		atual = primeiro;
+		do {
+			retorno += atual.getCasa()+" ";
+			atual = atual.getProximo();
+		}while(atual != ultimo.getProximo());
+		
+		return retorno;
+	}
+	
 	// Checar se precisa de parametro pra criar Tabela, caso precise alterar metodo inserePrimeiro() abaixo
-	public void inserePrimeiro() {
-		Tabela novo = new Tabela();
+	public void inserePrimeiro(String acao) {
+		Casa novo = new Casa(acao);
 		
 		if(estaVazia()) {
 			novo.setProximo(novo);
@@ -52,8 +66,8 @@ public class Tabuleiro {
 	}
 	
 	//mesma coisa do metodo inserePrimeiro(), checar se precisa de parametro pra criar tabela
-	public void insereUltimo() {
-		Tabela novo = new Tabela();
+	public void insereUltimo(String acao) {
+		Casa novo = new Casa(acao);
 		
 		if(estaVazia()) {
 			novo.setProximo(novo);
@@ -83,8 +97,8 @@ public class Tabuleiro {
 	 * mesma coisa dos metodos inserePrimeiro() e insereUltimo(), verificar se � necessario
 	 * passar algum parametro para criar Tabela...
 	 * */
-	public void insereNaPosicao(int pos) {
-		Tabela novo = new Tabela();
+	public void insereNaPosicao(int pos, String acao) {
+		Casa novo = new Casa(acao);
 		moveParaPosicao(pos);
 		novo.setProximo(atual.getProximo());
 		novo.setAnterior(atual);
@@ -92,19 +106,17 @@ public class Tabuleiro {
 	}
 	
 	//Retorna o elemento na posi��o indicada
-	public Tabela elementoNaPosicao(int pos) {
+	public Casa elementoNaPosicao(int pos) {
 		moveParaPosicao(pos);
 		return atual;
 	}
 	
 	//Retorna a posicao de um elemento na lista, se n�o existir retorna um numero negativo(palavras do luciano)
-	public int buscaElemento(String n) {
-		//No caso "String n" seria algo para comparar, o nome no caso, mas dai tem q ver isso
-		
+	public int buscaElemento(String acao) {		
 		int cont =0;
 		atual = primeiro;
 		
-		while(atual != null && atual.getCasa().equalsIgnoreCase(n)) {
+		while(atual != null && atual.getCasa().equalsIgnoreCase(acao)) {
 			atual = atual.getProximo();
 			cont++;
 		}

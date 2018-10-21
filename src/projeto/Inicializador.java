@@ -153,13 +153,69 @@ public class Inicializador {
 
 	// Metodo para adicionar as casas do tabuleiro
 	public static Tabuleiro montarTabuleiro() {
+		
+		// VARIAVEI CONSTANTES
+		final String PERDE_TUDO 	= "Perde Tudo";
+		final String SORTE_AZAR		= "Sote e Azar";
+		final String CEBOLA 		= "Cebola";
+		final String CALABRESA		= "Calabresa";
+		final String QUEIJO			= "Queijo";
+		final String TOMATE			= "Tomate";
+		final String OVO			= "Ovo";
+		final String AZEITONA		= "Azeitona";
+		final String MILHO			= "Milho";
+		final String PRESUNTO		= "Presunto";
+		final String BROCOLIS		= "Brocolis";
+		
+		// Criando objeto tabuleiro
 		Tabuleiro tabuleiro = new Tabuleiro();
 		
-		//tabuleiro.insereUltimo("Perde Tudo");
+		// PRIMEIRO COLUNA
+		tabuleiro.insereUltimo(PERDE_TUDO);
+		tabuleiro.insereUltimo(CEBOLA);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(CALABRESA);
+		tabuleiro.insereUltimo(QUEIJO);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(SORTE_AZAR);
 		
+		// SEGUNDA COLUNA
+		tabuleiro.insereUltimo(TOMATE);
+		tabuleiro.insereUltimo(OVO);
+		tabuleiro.insereUltimo(AZEITONA);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(MILHO);
+		tabuleiro.insereUltimo(AZEITONA);
+		
+		// TERCEIRA COLUNA
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(PRESUNTO);
+		tabuleiro.insereUltimo(TOMATE);
+		tabuleiro.insereUltimo(MILHO);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(BROCOLIS);
+		
+		// QUARTA COLUNA
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(OVO);
+		tabuleiro.insereUltimo(CEBOLA);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(CALABRESA);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(PRESUNTO);
+		
+		// QUINTA COLUNA
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(QUEIJO);
+		tabuleiro.insereUltimo(AZEITONA);
+		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(BROCOLIS);
+		tabuleiro.insereUltimo(AZEITONA);
+		tabuleiro.insereUltimo(SORTE_AZAR);
 		
 		return tabuleiro;
 	}
 	
-
 }
