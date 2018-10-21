@@ -9,7 +9,11 @@ import com.sun.org.apache.bcel.internal.generic.GETSTATIC;
 
 public class Game {
 
+	private static SorteAzar sortaAzar;
+	
 	public static void start(Jogador jogador01, Jogador jogador02, Jogador jogador03, Jogador jogador04, Jogador jogador05) {
+		
+		sortaAzar = Inicializador.gerarSorteAzar();
 		
 		while(true) {
 			if(jogador01 != null) {
@@ -55,8 +59,14 @@ public class Game {
 		System.out.println(" VALOR DO DADO: "+casas);
 		System.out.println(" CASA PROXIMA: "+atual.getCasaAtual().getCasa());
 		
-		// Remove da lista de ingrediente
-		atual.getPizza().rem(atual.getCasaAtual().getCasa());
+		// Realiza ação
+		if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Sote e Azar")) {
+			sortaAzar.getQuantia();
+		}else if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Perde Tudo")){
+			
+		}else {
+			atual.getPizza().rem(atual.getCasaAtual().getCasa());
+		}
 		
 		System.out.println(" [ ! ] Insira qualquer valor para continuar");
 		

@@ -38,7 +38,7 @@ public class Pizza {
 		for(int i=0; i< comprimento(); i++){
 			
 			try {
-				
+				System.out.println(comprimento());
 				// Caso sabor for DIFERENTE do passado pelo parametro
 				if(!atual.getSabor().equalsIgnoreCase(sabor)) {
 					novo = new Ingredientes(atual.getSabor());
@@ -54,9 +54,7 @@ public class Pizza {
 			}
 		}
 		
-		inicio = list;
-		System.out.println("SOUTANDO LIST "+list.getSabor());
-	
+		inicio = list;	
 	}
 	
 	public int comprimento() {
