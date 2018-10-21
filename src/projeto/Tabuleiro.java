@@ -162,5 +162,8 @@ public class Tabuleiro {
 		}
 	}
 	
+	public Casa getAtual() {
+		return this.atual;
+	}
 }
 

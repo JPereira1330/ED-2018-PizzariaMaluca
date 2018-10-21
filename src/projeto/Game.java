@@ -4,6 +4,8 @@ import java.io.InputStream;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.sun.org.apache.bcel.internal.generic.GETSTATIC;
+
 
 public class Game {
 
@@ -35,14 +37,22 @@ public class Game {
 		
 		clear(4);
 		
-		int casas = rolarDado();
+		int casas = rolarDado()+atual.getMovimentos();
 		
 		System.out.println("\t\t [ Iniciando turno do "+atual.getNome()+" ] ");
 		System.out.println(" \n");
 		System.out.println(" SABOR DA PIZZA: "+atual.getPizza().getSabor());
 		System.out.println(" INGREDIENTES FALTANDO: "+atual.getPizza().retornaLista());
 		System.out.println(" CASA ATUAL: "+atual.getCasaAtual().getCasa());
-		System.out.println(" CASA PROXIMA: ");
+		
+		atual.getTabuleiro().moveParaPosicao(casas);
+		atual.setCasaAtual(atual.getTabuleiro().getAtual());
+		System.out.println("\n [ * ] Rolando dado... \n");
+		
+		System.out.println(" VALOR DO DADO: "+casas);
+		System.out.println(" CASA PROXIMA: "+atual.getCasaAtual().getCasa());
+		System.out.println(" [ ! ] Insira qualquer valor para continuar");
+		
 		scan.next().charAt(0);
 		
 	}

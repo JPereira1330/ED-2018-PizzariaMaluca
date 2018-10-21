@@ -6,6 +6,7 @@ public class Jogador {
 	private Pizza pizza;
 	private Tabuleiro tabuleiro;
 	private Casa casaAtual;
+	private int movimentos;
 	
 	/**
 	 * @param nome	<String>
@@ -18,6 +19,7 @@ public class Jogador {
 		setPizza(pizza);
 		setTabuleiro(tab);
 		setCasaAtual(casa);
+		movimentos = 0;
 	}
 	
 	public String getNome() {
@@ -44,7 +46,12 @@ public class Jogador {
 	public void setCasaAtual(Casa casaAtual) {
 		this.casaAtual = casaAtual;
 	}
+
+	public int getMovimentos() {
+		return this.movimentos;
+	}
 	
-	
-	
+	public void addMovimentos(int movimentos) {
+		this.movimentos += movimentos;
+	}
 }
