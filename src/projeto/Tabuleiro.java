@@ -16,6 +16,17 @@ public class Tabuleiro {
 		Casa primeiro = null;
 	}
 	
+	// Retonar o elemento de tal posição
+	public Casa retornaCasa(int posicao) {
+		Casa casa = primeiro;
+		
+		for(int i = 0; i < posicao; i++) {
+			casa = casa.getProximo();
+		}
+		
+		return casa;
+	}
+	
 	// Retorna se a lista esta vazia
 	public boolean estaVazia() {
 		return primeiro == null;

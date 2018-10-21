@@ -27,7 +27,7 @@ public class Menu {
 		case 1:
 			iniciarJogo();
 			break;
-		case 2:
+		case 9:
 			break;
 			default:
 				System.err.println("\n\n Inseriu uma opção invalida");
@@ -56,34 +56,73 @@ public class Menu {
 				concluido = true;
 		}
 		
+		
+		
 		// Resetando Scan
 		scan = new Scanner(System.in);
+		
+		// Craindo objetos
+		Jogador jogador01 = null;
+		Jogador jogador02 = null;
+		Jogador jogador03 = null;
+		Jogador jogador04 = null;
+		Jogador jogador05 = null;
+		Pizza pizza;
+		Tabuleiro tab;
 		
 		for(int i = 0; i < quantia; i++) {
 		
 			// Pritando as pizzas
-			System.out.println(" NOME DA PIZZA  | INGREDIENTES NECESSARIOS");
-			System.out.println(" Calabresa		[ Azeitona, Calabresa, Ervilha,   Brocolis,  Ovo 		]");
-			System.out.println(" Marguerita		[ Queijo,   Milho,     Tomate,    Calabresa, Brocolis 	]");
-			System.out.println(" Romana			[ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] ");
-			System.out.println(" Toscana		[ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]");
-			System.out.println(" Portuguesa 	[ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]");
-			System.out.println(" Vegetariana	[ Ovo, 	    Tomate,    Cebola,    Brocolis,  Ervilha 	]");
+			System.out.println(" NOME DA PIZZA \t\t | INGREDIENTES NECESSARIOS");
+			System.out.println(" Calabresa \t\t [ Azeitona, Calabresa, Ervilha,   Brocolis,  Ovo	]");
+			System.out.println(" Marguerita \t\t [ Queijo,   Milho,     Tomate,    Calabresa, Brocolis 	]");
+			System.out.println(" Romana \t\t [ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] ");
+			System.out.println(" Toscana \t\t [ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]");
+			System.out.println(" Portuguesa \t\t [ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]");
+			System.out.println(" Vegetariana \t\t [ Ovo,	Tomate,    Cebola,    Brocolis,  Ervilha 	]");
 			System.out.print  ("\n [ Jogador "+i+" ] -> ");
 			
 			String sabor = scan.nextLine();
 			sabor = sabor.toLowerCase();
 			
-			if(sabor.equals("calabresa") || sabor.equals("Marguerita") || sabor.equals("Romana") || sabor.equals("Toscana") || sabor.equals("Portuguesa") || sabor.equals("Vegetariana")){
-				//Jogador jogador = new Jogador();
-				//jogador.
+			if(sabor.equals("calabresa") || sabor.equals("marguerita") || sabor.equals("romana") || sabor.equals("toscana") || sabor.equals("portuguesa") || sabor.equals("Vegetariana")){
+
+				switch(i) {
+					case 0:
+						pizza = Inicializador.montarPizza(sabor);
+						tab = Inicializador.montarTabuleiro();
+						jogador01 = new Jogador("Jogador 01", pizza, tab, tab.retornaCasa(0));
+					break;
+					case 1:
+						pizza = Inicializador.montarPizza(sabor);
+						tab = Inicializador.montarTabuleiro();
+						jogador02 = new Jogador("Jogador 02", pizza, tab, tab.retornaCasa(0));
+					break;
+					case 2:
+						pizza = Inicializador.montarPizza(sabor);
+						tab = Inicializador.montarTabuleiro();
+						jogador03 = new Jogador("Jogador 03", pizza, tab, tab.retornaCasa(0));
+					break;
+					case 3:
+						pizza = Inicializador.montarPizza(sabor);
+						tab = Inicializador.montarTabuleiro();
+						jogador04 = new Jogador("Jogador 04", pizza, tab, tab.retornaCasa(0));
+					break;
+					case 4:
+						pizza = Inicializador.montarPizza(sabor);
+						tab = Inicializador.montarTabuleiro();
+						jogador05 = new Jogador("Jogador 05", pizza, tab, tab.retornaCasa(0));
+					break;
+				}
+				
 			}else {
+				System.out.println(" [ERRO] Sabor invalido");
 				i--;
-				System.out.println(" [ ERRO ] SABOR INEXISTENTE");
 			}
+				
 		}
 		
-		
+		Game.start(jogador01,jogador02,jogador03,jogador04,jogador05);
 	}
 	
 	// Metodo para limpar a tela

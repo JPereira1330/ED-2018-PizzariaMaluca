@@ -3,6 +3,7 @@ package projeto;
 public class Pizza {
 
 	private int quantia;
+	private String sabor;
 	private Ingredientes inicio;
 
 	public Pizza() {	
@@ -81,6 +82,19 @@ public class Pizza {
 		System.out.println(retorno);
 	}
 	
+	// Retorna lista
+	public String retornaLista() {
+		Ingredientes atual = inicio;
+		String retorno = "";
+		
+		while(atual != null) {
+			retorno += (atual.getSabor() == null) ? "" : atual.getSabor()+" ";
+			atual = atual.getProximo();
+		}
+		
+		return retorno;
+	}
+	
 	// Metodo para limpar a lista
 	public void limparLista(){
 		inicio = null;
@@ -105,6 +119,9 @@ public class Pizza {
 	/*
 	 * GETTER'S
 	 */
+	public final String getSabor() {
+		return sabor;
+	}
 	public final int getQuantia() {
 		return quantia;
 	}
@@ -115,6 +132,9 @@ public class Pizza {
 	/*
 	 * SETTER'S
 	 */
+	public final void setSabor(String sabor) {
+		this.sabor = sabor;
+	}
 	public final void setQuantia(int quantia) {
 		this.quantia = quantia;
 	}

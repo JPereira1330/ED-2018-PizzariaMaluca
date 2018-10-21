@@ -7,10 +7,9 @@ public class Teste {
 	 */
 	
 	public static void testar() {
-		
-		Tabuleiro tab = Inicializador.montarTabuleiro();
 
-		System.out.println(tab.lista());
+		
+		
 	}
 	
 }

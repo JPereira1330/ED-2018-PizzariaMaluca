@@ -91,7 +91,8 @@ public class Inicializador {
 		switch(sabor) {
 		
 			// 1. Calabresa		[ Azeitona, Calabresa, Ervilha,   Brocolis,  Ovo 		] 
-			case "Calabresa":
+			case "calabresa":
+				pizza.setSabor("Calabresa");
 				pizza.add("Azeitona");
 				pizza.add("Calabresa");
 				pizza.add("Ervilha");
@@ -100,7 +101,8 @@ public class Inicializador {
 				break;
 				
 			// 2. Marguerita	[ Queijo,   Milho,     Tomate,    Calabresa, Brocolis 	]
-			case "Marguerita":
+			case "marguerita":
+				pizza.setSabor("Marguerita");
 				pizza.add("Quejo");
 				pizza.add("Milho");
 				pizza.add("Tomate");
@@ -109,7 +111,8 @@ public class Inicializador {
 				break;
 				
 			// 3. Romana		[ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] 
-			case "Romana":
+			case "romana":
+				pizza.setSabor("Romana");
 				pizza.add("Queijo");
 				pizza.add("Milho");
 				pizza.add("Cebola");
@@ -118,7 +121,8 @@ public class Inicializador {
 				break;
 				
 			// 4. Toscana		[ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]
-			case "Toscana":
+			case "toscana":
+				pizza.setSabor("Toscana");
 				pizza.add("Presunto");
 				pizza.add("Tomate");
 				pizza.add("Calabresa");
@@ -127,7 +131,8 @@ public class Inicializador {
 				break;
 			
 			// 5. Portuguesa	[ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]
-			case "Portuguesa":
+			case "portuguesa":
+				pizza.setSabor("Portuguesa");
 				pizza.add("Queijo");
 				pizza.add("Milho");
 				pizza.add("Ovo");
@@ -136,16 +141,14 @@ public class Inicializador {
 				break;
 				
 			// 6. Vegetariana	[ Ovo, 	    Tomate,    Cebola,    Brocolis,  Ervilha	]
-			case "Vegetariana":
+			case "vegetariana":
+				pizza.setSabor("Vegetariana");
 				pizza.add("Ovo");
 				pizza.add("Tomate");
 				pizza.add("Cebola");
 				pizza.add("Brocolis");
 				pizza.add("Ervilha");
 				break;
-				default:
-					System.out.println("Sabor de pizza incorreto");
-					break;
 		}
 		
 		return pizza;
