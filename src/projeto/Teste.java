@@ -8,8 +8,7 @@ public class Teste {
 	
 	public static void testar() {
 		
-		Menu.exec();
-		
+		Pizza pizza = new Pizza();
 		
 		System.out.println("6 - Removendo ERVILHA");
 		pizza.rem("Ervilha");
