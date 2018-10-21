@@ -37,7 +37,9 @@ public class Game {
 		
 		clear(4);
 		
-		int casas = rolarDado()+atual.getMovimentos();
+		// Joga numero aleatorio (Entre 1 a 6) e salva a movimentação
+		int casas = rolarDado();
+		atual.addMovimentos(casas);
 		
 		System.out.println("\t\t [ Iniciando turno do "+atual.getNome()+" ] ");
 		System.out.println(" \n");
@@ -45,12 +47,17 @@ public class Game {
 		System.out.println(" INGREDIENTES FALTANDO: "+atual.getPizza().retornaLista());
 		System.out.println(" CASA ATUAL: "+atual.getCasaAtual().getCasa());
 		
-		atual.getTabuleiro().moveParaPosicao(casas);
+		atual.getTabuleiro().moveParaPosicao(atual.getMovimentos());
 		atual.setCasaAtual(atual.getTabuleiro().getAtual());
+		
 		System.out.println("\n [ * ] Rolando dado... \n");
 		
 		System.out.println(" VALOR DO DADO: "+casas);
 		System.out.println(" CASA PROXIMA: "+atual.getCasaAtual().getCasa());
+		
+		// Remove da lista de ingrediente
+		atual.getPizza().rem(atual.getCasaAtual().getCasa());
+		
 		System.out.println(" [ ! ] Insira qualquer valor para continuar");
 		
 		scan.next().charAt(0);
@@ -60,7 +67,7 @@ public class Game {
 	// Metodo que simula o dado
 	public static int rolarDado() {
 		Random rand = new Random();
-		return (int) rand.nextInt(4) + 1;
+		return (int) rand.nextInt(5) + 1;
 	}
 	
 	// Metodo para pular linhas
