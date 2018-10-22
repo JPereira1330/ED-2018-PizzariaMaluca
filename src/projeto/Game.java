@@ -49,7 +49,7 @@ public class Game {
 		System.out.println(" \n");
 		System.out.println(" SABOR DA PIZZA: "+atual.getPizza().getSabor());
 		System.out.println(" INGREDIENTES FALTANDO: "+atual.getPizza().retornaLista());
-		System.out.println(" CASA ATUAL: "+atual.getCasaAtual().getCasa());
+		System.out.println(" CASA ANTERIOR: "+atual.getCasaAtual().getCasa());
 		
 		atual.getTabuleiro().moveParaPosicao(atual.getMovimentos());
 		atual.setCasaAtual(atual.getTabuleiro().getAtual());
@@ -57,11 +57,13 @@ public class Game {
 		System.out.println("\n [ * ] Rolando dado... \n");
 		
 		System.out.println(" VALOR DO DADO: "+casas);
-		System.out.println(" CASA PROXIMA: "+atual.getCasaAtual().getCasa());
+		System.out.println(" CASA ATUAL: "+atual.getCasaAtual().getCasa());
 		
 		// Realiza ação
 		if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Sote e Azar")) {
-			sortaAzar.getQuantia();
+			Carta carta = sortaAzar.rem();
+			aplicaSorteAzar(atual, carta);
+			System.out.println(" [SORTE OU AZAR] "+carta.getAcao());
 		}else if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Perde Tudo")){
 			
 		}else {
@@ -71,6 +73,31 @@ public class Game {
 		System.out.println(" [ ! ] Insira qualquer valor para continuar");
 		
 		scan.next().charAt(0);
+		
+	}
+	
+	// Realiza ação do sorte e azar
+	public static void aplicaSorteAzar(Jogador atual, Carta carta) {
+		
+		switch(carta.getAcao()) {
+		
+			case "Você acertou o ponto da pizza. [ ganhou 1 ingrediente ]":
+				atual.getPizza().rem();
+				break;
+				
+			case "O supermercado esta em promoção. [ ganhou 1 Ingredientes ]":
+				atual.getPizza().rem();
+				break;
+				
+			case "Você queimou a pizza. [ perdeu 1 ingrediente ]":
+				//atual.getPizza().add();
+				break;
+				
+			case "Você exagerou nos ingredientes. [ perdeu 1 Ingredientes ]":
+				//atual.getPizza().add();
+				break;
+			
+		}
 		
 	}
 	

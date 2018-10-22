@@ -70,6 +70,13 @@ public class Menu {
 		Pizza pizza;
 		Tabuleiro tab;
 		
+		final String pTOSCANA		= "Toscana";
+		final String pMARGUERITA 	= "Marguerita";
+		final String pVEGETARIANA	= "Vegetariana";
+		final String pCALABRESA		= "Calabresa";
+		final String pROMANA		= "Romana";
+		final String pPortuguesa	= "Portuguesa";
+		
 		for(int i = 0; i < quantia; i++) {
 		
 			// Pritando as pizzas
@@ -79,13 +86,14 @@ public class Menu {
 			System.out.println(" Romana \t\t [ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] ");
 			System.out.println(" Toscana \t\t [ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]");
 			System.out.println(" Portuguesa \t\t [ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]");
-			System.out.println(" Vegetariana \t\t [ Ovo,		Tomate,    Cebola,    Brocolis,  Ervilha 	]");
+			System.out.println(" Vegetariana \t\t [ Ovo,	Tomate,    Cebola,    Brocolis,  Ervilha 	]");
 			System.out.print  ("\n [ Jogador "+i+" ] -> ");
 			
 			String sabor = scan.nextLine();
 			sabor = sabor.toLowerCase();
+			sabor = sabor.substring(0,1).toUpperCase().concat(sabor.substring(1));
 			
-			if(sabor.equals("calabresa") || sabor.equals("marguerita") || sabor.equals("romana") || sabor.equals("toscana") || sabor.equals("portuguesa") || sabor.equals("Vegetariana")){
+			if(sabor.equals(pCALABRESA) || sabor.equals(pMARGUERITA) || sabor.equals(pROMANA) || sabor.equals(pTOSCANA) || sabor.equals(pPortuguesa) || sabor.equals(pVEGETARIANA)){
 
 				switch(i) {
 					case 0:

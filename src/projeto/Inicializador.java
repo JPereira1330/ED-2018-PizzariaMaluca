@@ -12,11 +12,11 @@ public class Inicializador {
 	public static SorteAzar gerarSorteAzar() {
 		
 		// Mensagem das cartas
-		String sorte_01 = "Você acertou o ponto da pizza. \n [ escolha 1 ingrediente ]";
-		String sorte_02 = "O supermercado esta em promoção. \n [ escolha 1 Ingredientes ]";
-		String azar_01 	= "Você queimou a pizza. \n [ perdeu 1 ingrediente ]";
-		String azar_02 	= "Você exagerou nos ingredientes. \n [ perdeu 1 Ingredientes ]";
-		String ambos    = "Você ganhou uma carona. \n [ Jogue o novamente dado ]";
+		String sorte_01 = "Você acertou o ponto da pizza. [ ganhou 1 ingrediente ]";
+		String sorte_02 = "O supermercado esta em promoção. [ ganhou 1 Ingredientes ]";
+		String azar_01 	= "Você queimou a pizza. [ perdeu 1 ingrediente ]";
+		String azar_02 	= "Você exagerou nos ingredientes. [ perdeu 1 Ingredientes ]";
+		String ambos    = "Você ganhou uma carona. [ Jogue o novamente dado ]";
 		
 		// Criando objeto da lista
 		SorteAzar lista_sa = new SorteAzar();
@@ -88,66 +88,84 @@ public class Inicializador {
 		
 		Pizza pizza = new Pizza();
 		
+		final String CEBOLA 		= "Cebola";
+		final String CALABRESA		= "Calabresa";
+		final String QUEIJO			= "Queijo";
+		final String TOMATE			= "Tomate";
+		final String OVO			= "Ovo";
+		final String AZEITONA		= "Azeitona";
+		final String MILHO			= "Milho";
+		final String PRESUNTO		= "Presunto";
+		final String BROCOLIS		= "Brocolis";
+		final String ERVILHA		= "Ervilha";
+		
+		final String pTOSCANA		= "Toscana";
+		final String pMARGUERITA 	= "Marguerita";
+		final String pVEGETARIANA	= "Vegetariana";
+		final String pCALABRESA		= "Calabresa";
+		final String pROMANA		= "Romana";
+		final String pPortuguesa	= "Portuguesa";
+		
 		switch(sabor) {
 		
 			// 1. Calabresa		[ Azeitona, Calabresa, Ervilha,   Brocolis,  Ovo 		] 
-			case "calabresa":
-				pizza.setSabor("Calabresa");
-				pizza.add("Azeitona");
-				pizza.add("Calabresa");
-				pizza.add("Ervilha");
-				pizza.add("Brocolis");
-				pizza.add("Ovo");
+			case pCALABRESA:
+				pizza.setSabor(pCALABRESA);
+				pizza.add(AZEITONA);
+				pizza.add(CALABRESA);
+				pizza.add(ERVILHA);
+				pizza.add(BROCOLIS);
+				pizza.add(OVO);
 				break;
 				
 			// 2. Marguerita	[ Queijo,   Milho,     Tomate,    Calabresa, Brocolis 	]
-			case "marguerita":
-				pizza.setSabor("Marguerita");
-				pizza.add("Quejo");
-				pizza.add("Milho");
-				pizza.add("Tomate");
-				pizza.add("Calabresa");
-				pizza.add("Brocolis");
+			case pMARGUERITA:
+				pizza.setSabor(pMARGUERITA);
+				pizza.add(QUEIJO);
+				pizza.add(MILHO);
+				pizza.add(TOMATE);
+				pizza.add(CALABRESA);
+				pizza.add(BROCOLIS);
 				break;
 				
 			// 3. Romana		[ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] 
-			case "romana":
-				pizza.setSabor("Romana");
-				pizza.add("Queijo");
-				pizza.add("Milho");
-				pizza.add("Cebola");
-				pizza.add("Presunto");
-				pizza.add("Ervilha");
+			case pROMANA:
+				pizza.setSabor(pROMANA);
+				pizza.add(QUEIJO);
+				pizza.add(MILHO);
+				pizza.add(CEBOLA);
+				pizza.add(PRESUNTO);
+				pizza.add(ERVILHA);
 				break;
 				
 			// 4. Toscana		[ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]
-			case "toscana":
-				pizza.setSabor("Toscana");
-				pizza.add("Presunto");
-				pizza.add("Tomate");
-				pizza.add("Calabresa");
-				pizza.add("Cebola");
-				pizza.add("Azeitona");
+			case pTOSCANA:
+				pizza.setSabor(pTOSCANA);
+				pizza.add(PRESUNTO);
+				pizza.add(TOMATE);
+				pizza.add(CALABRESA);
+				pizza.add(CEBOLA);
+				pizza.add(AZEITONA);
 				break;
 			
 			// 5. Portuguesa	[ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]
-			case "portuguesa":
-				pizza.setSabor("Portuguesa");
-				pizza.add("Queijo");
-				pizza.add("Milho");
-				pizza.add("Ovo");
-				pizza.add("Azeitona");
-				pizza.add("Presunto");
+			case pPortuguesa:
+				pizza.setSabor(pPortuguesa);
+				pizza.add(QUEIJO);
+				pizza.add(MILHO);
+				pizza.add(OVO);
+				pizza.add(AZEITONA);
+				pizza.add(PRESUNTO);
 				break;
 				
 			// 6. Vegetariana	[ Ovo, 	    Tomate,    Cebola,    Brocolis,  Ervilha	]
-			case "vegetariana":
-				pizza.setSabor("Vegetariana");
-				pizza.add("Ovo");
-				pizza.add("Tomate");
-				pizza.add("Cebola");
-				pizza.add("Brocolis");
-				pizza.add("Ervilha");
+			case pVEGETARIANA:
+				pizza.setSabor(pVEGETARIANA);
+				pizza.add(OVO);
+				pizza.add(TOMATE);
+				pizza.add(CEBOLA);
+				pizza.add(BROCOLIS);
+				pizza.add(ERVILHA);
 				break;
 		}
 		
@@ -169,6 +187,7 @@ public class Inicializador {
 		final String MILHO			= "Milho";
 		final String PRESUNTO		= "Presunto";
 		final String BROCOLIS		= "Brocolis";
+		final String ERVILHA		= "Ervilha";
 		
 		// Criando objeto tabuleiro
 		Tabuleiro tabuleiro = new Tabuleiro();
@@ -186,7 +205,7 @@ public class Inicializador {
 		tabuleiro.insereUltimo(TOMATE);
 		tabuleiro.insereUltimo(OVO);
 		tabuleiro.insereUltimo(AZEITONA);
-		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(ERVILHA);
 		tabuleiro.insereUltimo(SORTE_AZAR);
 		tabuleiro.insereUltimo(MILHO);
 		tabuleiro.insereUltimo(AZEITONA);
@@ -204,7 +223,7 @@ public class Inicializador {
 		tabuleiro.insereUltimo(SORTE_AZAR);
 		tabuleiro.insereUltimo(OVO);
 		tabuleiro.insereUltimo(CEBOLA);
-		tabuleiro.insereUltimo(SORTE_AZAR);
+		tabuleiro.insereUltimo(ERVILHA);
 		tabuleiro.insereUltimo(CALABRESA);
 		tabuleiro.insereUltimo(SORTE_AZAR);
 		tabuleiro.insereUltimo(PRESUNTO);
