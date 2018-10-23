@@ -2,7 +2,7 @@ package projeto;
 
 public class Casa{
 	
-	// Declaração dos atributos
+	// Declaracao dos atributos
 	private String casa;
 	private Casa anterior;
 	private Casa proximo;

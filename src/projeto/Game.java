@@ -70,7 +70,7 @@ public class Game {
 		System.out.println(" VALOR DO DADO: "+casas);
 		System.out.println(" CASA ATUAL: "+atual.getCasaAtual().getCasa());
 		
-		// Realiza ação
+		// Realiza acao
 		if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Sote e Azar")) {
 			
 			// Remove ca
@@ -111,7 +111,7 @@ public class Game {
 		atual.getPizza().add();
 	}
 	
-	// Realiza ação do sorte e azar
+	// Realiza acao do sorte e azar
 	public static boolean aplicaSorteAzar(Jogador atual, Carta carta) {
 		
 		switch(carta.getAcao()) {

@@ -10,7 +10,7 @@ public class Carta {
 	
 	/**
 	 * CONSTRUTOR
-	 * @param Acao [String] Texto da ação que esta carta trará ao jogo
+	 * @param Acao [String] Texto da acao que esta carta trara ao jogo
 	 * @param Anterior [Carta] Carta anterior a fila
 	 */
 	public Carta(String acao, Carta anterior) {

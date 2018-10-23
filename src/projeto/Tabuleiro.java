@@ -96,7 +96,7 @@ public class Tabuleiro {
 	}
 	
 	
-	//MOVE PARA A POSI��O INDICADA
+	//MOVE PARA A POSICAO INDICADA
 	public void moveParaPosicao(int pos) {
 		atual = primeiro;
 		for (int i = 0; i < pos; i++) {
@@ -122,7 +122,7 @@ public class Tabuleiro {
 		return atual;
 	}
 	
-	//Retorna a posicao de um elemento na lista, se n�o existir retorna um numero negativo(palavras do luciano)
+	//Retorna a posicao de um elemento na lista, se nao existir retorna um numero negativo
 	public int buscaElemento(String acao) {		
 		int cont =0;
 		atual = primeiro;

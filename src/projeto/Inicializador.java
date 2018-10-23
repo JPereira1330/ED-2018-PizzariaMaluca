@@ -12,11 +12,11 @@ public class Inicializador {
 	public static SorteAzar gerarSorteAzar() {
 		
 		// Mensagem das cartas
-		String sorte_01 = "Você acertou o ponto da pizza. [ ganhou 1 ingrediente ]";
-		String sorte_02 = "O supermercado esta em promoção. [ ganhou 1 Ingredientes ]";
-		String azar_01 	= "Você queimou a pizza. [ perdeu 1 ingrediente ]";
-		String azar_02 	= "Você exagerou nos ingredientes. [ perdeu 1 Ingredientes ]";
-		String ambos    = "Você ganhou uma carona. [ Jogue o novamente dado ]";
+		String sorte_01 = "Voce acertou o ponto da pizza. [ ganhou 1 ingrediente ]";
+		String sorte_02 = "O supermercado esta em promocao. [ ganhou 1 Ingredientes ]";
+		String azar_01 	= "Voce queimou a pizza. [ perdeu 1 ingrediente ]";
+		String azar_02 	= "Voce exagerou nos ingredientes. [ perdeu 1 Ingredientes ]";
+		String ambos    = "Voce ganhou uma carona. [ Jogue o novamente dado ]";
 		
 		// Criando objeto da lista
 		SorteAzar lista_sa = new SorteAzar();
