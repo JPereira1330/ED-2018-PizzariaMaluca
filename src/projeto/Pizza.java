@@ -38,21 +38,25 @@ public class Pizza {
 		for(int i=0; i< comprimento(); i++){
 			
 			try {
-				System.out.println(comprimento());
-				// Caso sabor for DIFERENTE do passado pelo parametro
-				if(!atual.getSabor().equalsIgnoreCase(sabor)) {
+				System.out.println(atual.getSabor()+"|"+atual.getSabor().equalsIgnoreCase(sabor)+"|"+atual.getSabor() != null);
+				if(atual.getSabor().equalsIgnoreCase(sabor) && atual.getSabor() != null) {
+					atual = atual.getProximo();
+				}
+				
+				if(atual.getSabor() != null) {
 					novo = new Ingredientes(atual.getSabor());
-					novo.setProximo(list); // Aqui coloco o objeto que possui  alista anterior
+					novo.setProximo(list);
 					list = novo;
 				}
-			
-				// Pega o proximo Objeto
+				
 				atual = atual.getProximo();
 				
 			}catch(Exception e) {
-				e.printStackTrace();
+				System.err.println("HEHE");
 			}
 		}
+		
+		inicio = list;
 	}
 		
 	// Metodo para remover um valor
@@ -117,7 +121,7 @@ public class Pizza {
 			}
 
 		// Verifica se tem presunto
-		if(getSabor().equalsIgnoreCase(pTOSCANA) || getSabor().equalsIgnoreCase(pPortuguesa) || getSabor().equalsIgnoreCase(pCALABRESA))
+		if(getSabor().equalsIgnoreCase(pTOSCANA) || getSabor().equalsIgnoreCase(pPortuguesa) || getSabor().equalsIgnoreCase(pROMANA))
 			if(!retornaLista().toLowerCase().contains(PRESUNTO.toLowerCase())) {
 				add(PRESUNTO);
 				return true;
@@ -131,7 +135,7 @@ public class Pizza {
 			}
 		
 		// Verifica se tem azeitona
-		if(getSabor().equalsIgnoreCase(pTOSCANA) || getSabor().equalsIgnoreCase(pPortuguesa) || getSabor().equalsIgnoreCase(pROMANA))
+		if(getSabor().equalsIgnoreCase(pTOSCANA) || getSabor().equalsIgnoreCase(pPortuguesa) || getSabor().equalsIgnoreCase(pCALABRESA))
 			if(!retornaLista().toLowerCase().contains(AZEITONA.toLowerCase())) {
 				add(AZEITONA);
 				return true;

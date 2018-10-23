@@ -14,28 +14,39 @@ public class Game {
 	public static void start(Jogador jogador01, Jogador jogador02, Jogador jogador03, Jogador jogador04, Jogador jogador05) {
 		
 		sortaAzar = Inicializador.gerarSorteAzar();
+		boolean jogo = false;
 		
-		while(true) {
+		while(!jogo) {
 			if(jogador01 != null) {
-				hub(jogador01);
+				jogo = hub(jogador01);
+				if(jogo)
+					break;
 			}
 			if(jogador02 != null) {
-				hub(jogador02);
+				jogo = hub(jogador02);
+				if(jogo)
+					break;
 			}
 			if(jogador03 != null) {
-				hub(jogador03);
+				jogo = hub(jogador03);
+				if(jogo)
+					break;
 			}
 			if(jogador04 != null) {
-				hub(jogador04);
+				jogo = hub(jogador04);
+				if(jogo)
+					break;
 			}
 			if(jogador05 != null) {
-				hub(jogador05);
+				jogo = hub(jogador05);
+				if(jogo)
+					break;
 			}
 		}
 		
 	}
 	
-	public static void hub(Jogador atual) {
+	public static boolean hub(Jogador atual) {
 	
 		Scanner scan = new Scanner(System.in);
 		
@@ -61,23 +72,47 @@ public class Game {
 		
 		// Realiza ação
 		if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Sote e Azar")) {
+			
+			// Remove ca
 			Carta carta = sortaAzar.rem();
-			aplicaSorteAzar(atual, carta);
+			boolean teste = aplicaSorteAzar(atual, carta);
+			
+			// Caso der rolagem novamente
+			if(teste) {
+				hub(atual);
+			}
+			
 			System.out.println(" [SORTE OU AZAR] "+carta.getAcao());
 		}else if(atual.getCasaAtual().getCasa().equalsIgnoreCase("Perde Tudo")){
-			
+			aplicaPerdeTudo(atual);
 		}else {
 			atual.getPizza().rem(atual.getCasaAtual().getCasa());
 		}
 		
 		System.out.println(" [ ! ] Insira qualquer valor para continuar");
 		
-		scan.next().charAt(0);
+		//scan.next().charAt(0);
 		
+		// Verifica se jogador ganhou
+		if(atual.getPizza().retornaLista().length() <= 2) {
+			System.out.println(atual.getNome()+" venceu!! ");
+			return true;
+		}
+	
+		return false;		
+	}
+	
+	// Volta com todos os ingredientes
+	public static void aplicaPerdeTudo(Jogador atual) {
+		atual.getPizza().add();
+		atual.getPizza().add();
+		atual.getPizza().add();
+		atual.getPizza().add();
+		atual.getPizza().add();
 	}
 	
 	// Realiza ação do sorte e azar
-	public static void aplicaSorteAzar(Jogador atual, Carta carta) {
+	public static boolean aplicaSorteAzar(Jogador atual, Carta carta) {
 		
 		switch(carta.getAcao()) {
 		
@@ -90,14 +125,19 @@ public class Game {
 				break;
 				
 			case "Você queimou a pizza. [ perdeu 1 ingrediente ]":
-				//atual.getPizza().add();
+				atual.getPizza().add();
 				break;
 				
 			case "Você exagerou nos ingredientes. [ perdeu 1 Ingredientes ]":
-				//atual.getPizza().add();
+				atual.getPizza().add();
 				break;
-			
+				
+			case "Você ganhou uma carona. [ Jogue o novamente dado ]":
+				System.out.print(" ");
+				return true;
 		}
+		
+		return false;
 		
 	}
 	
