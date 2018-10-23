@@ -1,11 +1,7 @@
 package projeto;
 
-import java.io.InputStream;
 import java.util.Random;
 import java.util.Scanner;
-
-import com.sun.org.apache.bcel.internal.generic.GETSTATIC;
-
 
 public class Game {
 
@@ -48,7 +44,7 @@ public class Game {
 	
 	public static boolean hub(Jogador atual) {
 	
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
 		
 		clear(4);
 		
@@ -89,7 +85,7 @@ public class Game {
 			atual.getPizza().rem(atual.getCasaAtual().getCasa());
 		}
 		
-		System.out.println(" [ ! ] Insira qualquer valor para continuar");
+		//System.out.println(" [ ! ] Insira qualquer valor para continuar");
 		
 		//scan.next().charAt(0);
 		

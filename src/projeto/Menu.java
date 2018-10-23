@@ -47,12 +47,12 @@ public class Menu {
 		
 		// Menu de seleção
 		while(!concluido) {
-			System.out.println(" [ * ] Insira a quantia de jogadores [ 1 ~ 5 ] ~> ");
+			System.out.println(" [ * ] Insira a quantia de jogadores [ 2 ~ 5 ] ~> ");
 
 			try { quantia = scan.nextInt(); } 
 			catch (Exception e) { System.out.println(); }
 			
-			if(quantia <= 5 && quantia >= 1) // ARRUMAR DPS TROCAR 1 PELO 2
+			if(quantia <= 5 && quantia >= 2)
 				concluido = true;
 		}
 		
@@ -86,7 +86,7 @@ public class Menu {
 			System.out.println(" Romana \t\t [ Queijo,   Milho,     Cebola,    Presunto,  Ervilha 	] ");
 			System.out.println(" Toscana \t\t [ Presunto, Tomate,    Calabresa, Cebola,    Azeitona	]");
 			System.out.println(" Portuguesa \t\t [ Queijo,   Milho,     Ovo,       Azeitona,  Presunto	]");
-			System.out.println(" Vegetariana \t\t [ Ovo,	Tomate,    Cebola,    Brocolis,  Ervilha 	]");
+			System.out.println(" Vegetariana \t\t [ Tomate,   Cebola,	Brocolis,  Ervilha,   Ovo 	]");
 			System.out.print  ("\n [ Jogador "+i+" ] -> ");
 			
 			String sabor = scan.nextLine();

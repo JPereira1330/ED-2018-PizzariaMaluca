@@ -38,7 +38,6 @@ public class Pizza {
 		for(int i=0; i< comprimento(); i++){
 			
 			try {
-				System.out.println(atual.getSabor()+"|"+atual.getSabor().equalsIgnoreCase(sabor)+"|"+atual.getSabor() != null);
 				if(atual.getSabor().equalsIgnoreCase(sabor) && atual.getSabor() != null) {
 					atual = atual.getProximo();
 				}
@@ -52,7 +51,7 @@ public class Pizza {
 				atual = atual.getProximo();
 				
 			}catch(Exception e) {
-				System.err.println("HEHE");
+
 			}
 		}
 		

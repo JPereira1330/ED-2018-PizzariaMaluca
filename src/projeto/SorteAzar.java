@@ -8,7 +8,8 @@ public class SorteAzar {
 	// Remove
 	public Carta rem() {
 		Carta retirado = topo;
-		topo = topo.getAnterior();
+		if(topo.getAnterior() != null)
+			topo = topo.getAnterior();
 		return retirado;
 	}
 	
