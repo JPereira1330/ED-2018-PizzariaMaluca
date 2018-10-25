@@ -3,7 +3,7 @@ package projeto;
 public class Carta {
 
 	private String acao;
-	private Carta anterior;
+	private Carta anterior=null;
 	
 	// Construtor vazio
 	public Carta() {}
